@@ -1,0 +1,97 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>//LIBRERIA PARA OBTENER NUMERO RANDOM
+
+int main(){
+
+//DECLARACION DE VARIABLES
+       
+    int fin,carta,num,suma,pc_num,pc,num2;
+    srand(time(NULL));
+    fin = 0;
+    suma = 0;
+
+//
+
+    while(fin!=2){
+                         num = (rand()%10)+1;
+                         printf("%d ",num);
+                         carta = (rand()%4)+1;
+                       
+             if (carta==1){
+                                   printf("de PICAS\n\n");
+                                   }
+                     if(carta==2){
+                                  printf("de CORAZONES\n\n");
+                                  }
+                     if(carta==3){
+                                  printf("de DIAMANTES\n\n");
+                                  }
+                     if(carta==4){
+                                  printf("de TREBOLES\n\n");
+                     }
+                        num2 = (rand()%10)+1;
+                        printf("%d",num2);
+                        carta = (rand()%4)+1;
+                        if (carta==1){
+                                   printf("de PICAS\n\n");
+                                   }
+                     if(carta==2){
+                                  printf("de CORAZONES\n\n");
+                                  }
+                     if(carta==3){
+                                  printf("de DIAMANTES\n\n");
+                                  }
+                     if(carta==4){
+                                  printf("de TREBOLES\n\n");
+                     }
+                   
+//SE SUMA EL NUMERO RANDOM OBTENIDO---SE PREGUNTA SI EL JUGADOR QUIERE OTRA CARTA---SE COMPRUEBA QUE EL JUGADOR AUN NO HAYA PERDIDO EL JUEGO
+
+        
+                 suma = suma + num + num2;
+                     printf("LA SUMA ES DE: %d\n\n",suma);
+                     printf("DESEA PEDIR OTRA CARTA? \nSI>>MARQUE 1\nNO>>MARQUE 2\n\n");
+                     scanf("%d",&fin);
+                     if (suma>21){
+                                  printf("HA PERDIDO EL JUEGO!\nLA SUMA EXCEDE LOS 21\n\n");
+                                  fin = 2;
+                                  }
+                     }
+
+       pc = (rand()%7)+1;
+       pc_num = pc + 16;
+
+       
+
+ 
+
+
+//COMPRUEBA QUE EL JUGARDOR 1 TENGA MENOS DE 21
+       
+    if(pc_num>21){
+                     printf("PUNTAJE JUGADOR: %d\nPUNTAJE PC: %d\n",suma,pc_num);
+                     printf("HA GANADO EL JUEGO!\n\n");
+                     }
+
+
+       else if(suma<=21){
+                    if(suma>pc_num){
+                                    printf("PUNTAJE JUGADOR: %d\nPUNTAJE PC: %d\n",suma,pc_num);
+                                    printf("HA GANADO EL JUEGO!\n\n");
+                                    }
+                    if(suma==pc_num){
+                                     printf("PUNTAJE JUGADOR: %d\nPUNTAJE PC: %d\n",suma,pc_num);
+                                     printf("JUEGO EMPATADO!!\n\n");
+                                     }
+                    if(suma<pc_num){
+                                    printf("PUNTAJE JUGADOR: %d\nPUNTAJE PC: %d\n",suma,pc_num);
+                                    printf("HA PERDIDO EL JUEGO!\n\n");
+                                    }
+                    }
+
+
+
+       system("pause");
+       }
+
